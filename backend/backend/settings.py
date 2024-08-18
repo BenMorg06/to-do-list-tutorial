@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo',
-    'corsheaders'
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -103,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # whitlist react port
-CORS_ORIGIN_WHITELIST = (
+CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000'
-)
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
